@@ -26,10 +26,14 @@ public class Controller implements Initializable {
     ObservableList<Contact> contacts = FXCollections.observableArrayList();
 
     public void onAdd() {
-        contacts.add(new Contact(textName.getText(), textPhone.getText(), textEmail.getText()));
-        textName.clear();
-        textPhone.clear();
-        textEmail.clear();
+        Contact item = new Contact(textName.getText(), textPhone.getText(), textEmail.getText());
+        if (!item.name.isEmpty() && !item.phone.isEmpty() && !item.email.isEmpty()) {
+            contacts.add(item);
+        }
+            //contacts.add(new Contact(textName.getText(), textPhone.getText(), textEmail.getText()));
+            textName.clear();
+            textPhone.clear();
+            textEmail.clear();
     }
 
     public void onRemove() {

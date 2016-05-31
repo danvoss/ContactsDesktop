@@ -14,15 +14,22 @@ public class Contact {
             this.email = email;
         }
 
-        @Override
+    public String getName() {
+        return name;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    @Override
         public String toString() {
             return "" + name + ", " + "" + phone + ", " + "" + email + "";
         }
-//            return "Contact{" +
-//                    "name='" + name + '\'' +
-//                    ", phone='" + phone + '\'' +
-//                    ", email='" + email + '\'' +
-//                    '}';
-        }
+}
 
 

@@ -6,7 +6,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import jodd.json.JsonSerializer;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -30,7 +34,6 @@ public class Controller implements Initializable {
         if (!item.name.isEmpty() && !item.phone.isEmpty() && !item.email.isEmpty()) {
             contacts.add(item);
         }
-            //contacts.add(new Contact(textName.getText(), textPhone.getText(), textEmail.getText()));
             textName.clear();
             textPhone.clear();
             textEmail.clear();
@@ -40,6 +43,16 @@ public class Controller implements Initializable {
         Contact item = (Contact) list.getSelectionModel().getSelectedItem();
         contacts.remove(item);
     }
+
+//    public void writeFile () throws IOException {
+//        File f = new File("contact.json");
+//        JsonSerializer serializer = new JsonSerializer();
+//        String json = serializer.serialize(contacts);
+//        FileWriter fwJson = new FileWriter(f);
+//        fwJson.write(json);
+//        fwJson.close();
+//    }
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
